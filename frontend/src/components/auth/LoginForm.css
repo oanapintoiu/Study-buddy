@@ -28,24 +28,11 @@ body {
 .study-buddy-heading {
   text-align: center;
   margin-bottom: 10px;
-  /* margin-top: -80px; */
   font-size: 35px;
   color: #18487a;
 }
 
 .additional-text {
-  /* text-align: center;
-  margin-bottom: 20px; */
-  /* Add the following properties */
-  /* width: 100%;
-  display: flex;
-  justify-content: center;
-  color: #18487a;
-  font-size: 1px; */
-  /* Add the following properties */
-  /* max-width: 80%;
-  margin-left: 70px;
-  margin-top: -50px; */
   text-align: center;
   margin-bottom: 20px;
   color: #18487a;
@@ -55,17 +42,13 @@ body {
 .input-group {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   margin-bottom: 10px;
   width: 100%;
-  font-family: "Georgia", serif;
 }
 
 .input-group input,
 #create-account-button,
 #submit {
-  /* flex-grow: 1; */
   border-radius: 5px;
   padding: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -74,8 +57,8 @@ body {
   font-size: 16px;
   font-family: "Georgia", serif;
   margin-bottom: 10px;
-  width: 100%;  
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
   margin-right: auto;
 }
 
@@ -88,7 +71,6 @@ body {
   border-radius: 4px;
   font-size: 16px;
   margin-bottom: 10px;
-  /* margin-top: 0; */
   font-weight: bold;
   transition: background-color 0.3s ease;
   font-family: "Georgia", serif;
@@ -101,4 +83,43 @@ body {
   color: #0a5416;
   border: 1px solid #797373;
   font-family: "Georgia", serif;
+}
+
+.input-group input.error::placeholder {
+  color: red;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
