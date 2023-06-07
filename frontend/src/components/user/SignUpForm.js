@@ -49,7 +49,6 @@ const SignUpForm = ({ navigate }) => {
   }
 
 
-<<<<<<< HEAD
   return (
     <form onSubmit={handleSubmit}>
       <header className="my-card">
@@ -84,21 +83,7 @@ const SignUpForm = ({ navigate }) => {
     
   
    
-=======
-    return (
-      <form onSubmit={handleSubmit}>
-          <input placeholder="Email" id="email" type='text' value={ email } onChange={handleEmailChange} />
-          <input placeholder="Username" id="username" type='username' value={ username } onChange={handleUsernameChange} />
-          <input placeholder="Password" id="password" type='password' value={ password } onChange={handlePasswordChange} />
-          <label htmlFor='avatar'>Avatar (optional):</label>
-          <input id='avatar' type='file' onChange={handleAvatarChange} />
-
-        <input id='submit' type="submit" value="Submit" />
-      </form>
-    );
->>>>>>> main
 }
 
 export default SignUpForm;
-
 

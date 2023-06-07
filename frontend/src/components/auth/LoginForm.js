@@ -55,7 +55,6 @@ const LogInForm = ({ navigate }) => {
   };
 
   return (
-<<<<<<< HEAD
      <><div className="study-buddy-heading">
       <h1>Study Buddy.</h1>
     </div>
@@ -94,31 +93,6 @@ const LogInForm = ({ navigate }) => {
           </button>
         </form>
       </div></>
-=======
-    <>
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Username"
-        id="username"
-        type="text"
-        value={username}
-        onChange={handleUsernameChange}
-      />
-      <input
-        placeholder="Password"
-        id="password"
-        type="password"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <input role="submit-button" id="submit" type="submit" value="Submit" />
-    </form>
-    <div>
-      <br></br>
-      <button onClick={() => navigate("/signup")}>Sign Up</button>
-    </div>
-    </>
->>>>>>> main
   );
 };
 
