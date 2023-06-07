@@ -3,7 +3,6 @@ const Post = require("../models/post");
 const User = require("../models/user");
 const TokenGenerator = require("../models/token_generator");
 const mongoose = require('mongoose');
-const User = require("../models/user")
 
 const GroupController = {
   Index: async (req, res) => {
@@ -211,7 +210,6 @@ const GroupController = {
   },  
 
   CreateAIPost: async (req, res) => {
-    console.log(req.body)
     const groupId = req.params.id;
     const { message } = req.body;
     const ai_question = req.body.ai_question;
