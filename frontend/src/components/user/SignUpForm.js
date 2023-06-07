@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './SignUpForm.css';
 
 const SignUpForm = ({ navigate }) => {
-
   const [email, setEmail] = useState("");
-  const[username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [avatar, setAvatar] = useState(null);
 
@@ -18,72 +17,82 @@ const SignUpForm = ({ navigate }) => {
     if (avatar) {
       formData.append('avatar', avatar);
     }
-    fetch( '/users', {
+    fetch('/users', {
       method: 'post',
       body: formData
     })
       .then(response => {
-        if(response.status === 201) {
-          navigate('/login')
+        if (response.status === 201) {
+          navigate('/login');
         } else {
-          navigate('/signup')
+          navigate('/signup');
         }
-      })
-  }
+      });
+  };
 
- 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value)
-  }
+    setEmail(event.target.value);
+  };
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value)
-  }
+    setPassword(event.target.value);
+  };
+
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value)
-  }
+    setUsername(event.target.value);
+  };
+
   const handleAvatarChange = (event) => {
     setAvatar(event.target.files[0]);
-    //console.log(event.target.files[0]);
-
-  }
-
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <header className="my-card">
-        <h1>STUDY BUDDY</h1>
-        <button className="my-btn">
-          <span>Sign up</span>
-        </button>
-      </header>
-      <div className="my-form-group">
-        <div className="my-input-row">
-          <div className="my-input-group">
-            <input placeholder="Email" id="email" type="text" value={email} onChange={handleEmailChange} />
-          </div>
-          <div className="my-input-group">
-            <input placeholder="Username" id="username" type="text" value={username} onChange={handleUsernameChange} />
-          </div>
-        </div>
-        <div className="my-input-group">
-          <input placeholder="Password" id="password" type="password" value={password} onChange={handlePasswordChange} />
-        </div>
+    <div>
+      <div className="study-buddy-heading">
+        <h1>Study Buddy</h1>
       </div>
-      <div className="my-form-group">
-        <input id="submit" type="submit" value="Submit" />
+      <div className="additional-text">
+        <p>
+          Complete the form below to join our community of eccentric neuron navigators!
+        </p>
       </div>
-    </form>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              placeholder="Email"
+              id="email"
+              type="text"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <input
+              placeholder="Password"
+              id="password"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              placeholder="Username"
+              id="username"
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </div>
+          <div className="input-group">
+            <input type="file" accept="image/*" onChange={handleAvatarChange} />
+          </div>
+          <div className="submit-button">
+            <input id="submit" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
-  
-
-
-
-      
-    
-  
-   
-}
+  }  
 
 export default SignUpForm;
-

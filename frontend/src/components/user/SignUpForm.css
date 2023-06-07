@@ -1,92 +1,78 @@
 body {
+  font-family: "Georgia", serif;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #e493d9, hsl(213, 85%, 65%));
+  background: radial-gradient(circle, #ffffff, #55BDCA);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.my-card {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 400px; /* Adjust the max-width to control the size of the white box */
-  height: 23vh;
+  max-width: 400px;
+  width: 90%;
+  height: auto;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #ff7f50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
 }
 
-.my-btn {
-  background-color: #1877f2;
+.study-buddy-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: #18487a;
+}
+
+.additional-text {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #18487a;
+  font-size: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: "Georgia", serif;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #f3f5f7;
+  border: 1px solid #797373;
+  font-size: 16px;
+  font-family: "Georgia", serif;
+  margin-bottom: 10px;
+}
+
+.login-button,
+#submit {
+  background-color: #022449;
   color: #fff;
   padding: 12px 24px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  margin-bottom: 10px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-family: "Georgia", serif;
 }
 
-
-.my-btn span {
-  font-weight: bold;
-  font-size: 20px;
+.login-button:hover,
+#submit:hover {
+  background-color: #e6ce1c;
+  color: #0a5416;
+  border: 1px solid #797373;
+  font-family: "Georgia", serif;
 }
-
-.my-form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.my-input-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.my-input-group {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.my-input-group input {
-  flex-grow: 1;
-  border-radius: 5px;
-  padding: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f0f2f5;
-  border: 1px solid #ddd;
-  font-size: 16px;
-}
-
-.my-input-group input:not(:last-child) {
-  margin-right: 25px; /* Add a gap between the email and username input fields */
-}
-
-input[type="submit"] {
-  padding: 15px;
-  background-color: #1c69e6;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 100%;
-  font-size: 22px;
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
-}
-
-input[type="submit"]:hover {
-  background-color: #0084ff; /* Change background color on hover */
-}
-

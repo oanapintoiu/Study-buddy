@@ -54,15 +54,22 @@ const LogInForm = ({ navigate }) => {
     setPassword(event.target.value);
   };
 
+  const handleSignUpClick = (event) => {
+    window.location.href = "http://localhost:3000/signup";
+  };
+
+  
   return (
-     <><div className="study-buddy-heading">
-      <h1>Study Buddy.</h1>
-    </div>
-    <div className="additional-text">
-    <p>Welcome to Study Buddy, your perfect companion for productive collaboration! 
-      </p>
-  </div>
-    <div className="container">
+    <>
+      <div className="study-buddy-heading">
+        <h1>Study Buddy</h1>
+      </div>
+      <div className="additional-text">
+        <p>
+        In a world where knowledge knows no boundaries, where learning is an eternal quest, a group of exceptional minds has come together to form the ultimate study group. But this is no ordinary group. Their secret weapon is a brilliant, eccentric AI helper that rivals even the legendary Sheldon Cooper.
+        </p>
+      </div>
+      <div className="container">
         <form onSubmit={handleSubmit} className="form">
           <div className="input-group">
             <input
@@ -70,7 +77,8 @@ const LogInForm = ({ navigate }) => {
               id="username"
               type="text"
               value={username}
-              onChange={handleUsernameChange} />
+              onChange={handleUsernameChange}
+            />
           </div>
           <div className="input-group">
             <input
@@ -78,24 +86,27 @@ const LogInForm = ({ navigate }) => {
               id="password"
               type="password"
               value={password}
-              onChange={handlePasswordChange} />
+              onChange={handlePasswordChange}
+            />
           </div>
-          <input
-            role="submit-button"
-            id="submit"
-            type="submit"
-            value="Log in" />
-          <div className="forgot-password">
-            <a href="#">Forgotten password?</a>
+          <div className="button-group">
+            <input
+              className="login-button"
+              role="submit-button"
+              id="submit"
+              type="submit"
+              value="Log in"
+            />
+            <div className="button-spacing"></div>
+            <button className="create-account-button" onClick={handleSignUpClick}>
+              Create new account
+            </button>
           </div>
-          <button className="create-account-button">
-            Create new account
-          </button>
         </form>
-      </div></>
+      </div>
+    </>
   );
 };
-
   
 
 export default LogInForm;
