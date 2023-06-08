@@ -87,72 +87,82 @@ const Feed = ({ navigate }) => {
   if(token) {
     return (
       <>
-        <h1>Homepage</h1>
-        <div>
-          <br></br>
-          <button onClick={createGroup}>Create a Study Group</button><br></br><br></br>
-          <br></br><p>Search for a Study Group</p>
-          <label>
-            Public/Private:
-            <select
-              value={searchFilter.isPublic}
-              onChange={(event) => setSearchFilter({ ...searchFilter, isPublic: event.target.value })}
-            >
-              <option value="">All</option>
-              <option value="public">Public</option>
-              <option value="private">Private</option>
-            </select>
-          </label>
-          <br></br>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={searchFilter.name}
-              onChange={(event) => setSearchFilter({ ...searchFilter, name: event.target.value })}
-            />
-          </label>
-          <br></br>
-          <label>
-            Category:
-            <input
-              type="text"
-              value={searchFilter.category}
-              onChange={(event) => setSearchFilter({ ...searchFilter, category: event.target.value })}
-            />
-          </label>
-          <br></br>
-          <label>
-            Sub-Category:
-            <input
-              type="text"
-              value={searchFilter.subCategory}
-              onChange={(event) => setSearchFilter({ ...searchFilter, subCategory: event.target.value })}
-            />
-          </label>
-          <br></br>
-          <label>
-            Level:
-            <input
-              type="text"
-              value={searchFilter.level}
-              onChange={(event) => setSearchFilter({ ...searchFilter, level: event.target.value })}
-            />
-          </label>
-          <br></br><br></br>
-          <button onClick={handleSearch}>Search</button>
-        </div>
-        <div id='feed' role="feed">
-          {groups.map((group) => (
-            <div key={group._id}>
-              {group.name}
-              <button onClick={() => joinGroup(group._id)}>Join</button>
-            </div>
-          ))}
-          {posts.map((post) => (
-            <Post post={post} key={post._id} />
-          ))}
-        </div>
+ <h1 className="homepage-heading">Homepage</h1>
+<div className="container">
+  <br />
+  <button className="create-group-button" onClick={createGroup}>Create a Study Group</button>
+  <br /><br />
+  <br />
+  <p className="search-group-text">Search for a Study Group</p>
+  <div className="input-group">
+    <label htmlFor="search-filter-public-private">Public/Private:</label>
+    <select
+      id="search-filter-public-private"
+      className="search-filter"
+      value={searchFilter.isPublic}
+      onChange={(event) => setSearchFilter({ ...searchFilter, isPublic: event.target.value })}
+    >
+      <option value="">All</option>
+      <option value="public">Public</option>
+      <option value="private">Private</option>
+    </select>
+  </div>
+  <div className="input-group">
+    <label htmlFor="search-filter-name">Name:</label>
+    <input
+      id="search-filter-name"
+      className="search-filter"
+      type="text"
+      value={searchFilter.name}
+      onChange={(event) => setSearchFilter({ ...searchFilter, name: event.target.value })}
+    />
+  </div>
+  <div className="input-group">
+    <label htmlFor="search-filter-category">Category:</label>
+    <input
+      id="search-filter-category"
+      className="search-filter"
+      type="text"
+      value={searchFilter.category}
+      onChange={(event) => setSearchFilter({ ...searchFilter, category: event.target.value })}
+    />
+  </div>
+  <div className="input-group">
+    <label htmlFor="search-filter-subcategory">Sub-Category:</label>
+    <input
+      id="search-filter-subcategory"
+      className="search-filter"
+      type="text"
+      value={searchFilter.subCategory}
+      onChange={(event) => setSearchFilter({ ...searchFilter, subCategory: event.target.value })}
+    />
+  </div>
+  <div className="input-group">
+    <label htmlFor="search-filter-level">Level:</label>
+    <input
+      id="search-filter-level"
+      className="search-filter"
+      type="text"
+      value={searchFilter.level}
+      onChange={(event) => setSearchFilter({ ...searchFilter, level: event.target.value })}
+    />
+  </div>
+  <br /><br />
+  <button className="search-button" onClick={handleSearch}>Search</button>
+</div>
+<div id='feed' role="feed">
+  {groups.map((group) => (
+    <div key={group._id}>
+      {group.name}
+      <button className="join-button" onClick={() => joinGroup(group._id)}>Join</button>
+    </div>
+  ))}
+  {posts.map((post) => (
+    <Post post={post} key={post._id} />
+  ))}
+</div>
+
+
       </>
     );
     
